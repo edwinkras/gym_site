@@ -1,8 +1,14 @@
+.nav-color {
+    background: #92dfe8;
+    background: linear-gradient(180deg, rgba(146, 223, 232, 1) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
 .gym-name-nav {
     font-family: "New Century Schoolbook", Georgia, serif;
     font-size: 58px;
     font-weight: 400;
     text-shadow: 1px 3px 10px dimgray;
+    background-color: ghostwhite;
     box-shadow: -6px 6px 40px lightcyan;
     border: 3px solid lightblue;
     padding: 10px;
