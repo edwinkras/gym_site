@@ -3,7 +3,7 @@
     background: linear-gradient(180deg, rgba(146, 223, 232, 1) 0%, rgba(255, 255, 255, 1) 100%);
 }
 
-.gym-name-nav {
+.logo {
     font-family: "New Century Schoolbook", Georgia, serif;
     font-size: 58px;
     font-weight: 400;
@@ -13,4 +13,21 @@
     border: 3px solid lightblue;
     padding: 10px;
     border-radius: 20px;
+}
+
+.text-box-main-view {
+    font-family: 'Trebuchet MS', sans-serif;
+    color: whitesmoke;
+    -webkit-text-stroke: 0.79px dimgray;
+    text-shadow: -6px 3px 5px dimgray;
+    box-shadow: -6px 6px 40px lightcyan;
+    border: 3px solid lightblue;
+    padding: 10px;
+    border-radius: 20px;
+    background: #99f1ff;
+    background: linear-gradient(147deg, rgba(153, 241, 255, 1) 0%, rgba(137, 184, 190, 1) 37%, rgba(122, 122, 122, 1) 95%);
+}
+
+body {
+    padding-top: 120px;
 }
