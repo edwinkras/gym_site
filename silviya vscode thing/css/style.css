@@ -56,6 +56,12 @@ img {
     border: 3px solid var(--border-color);
     padding: 10px;
     border-radius: 20px;
+    transition: background 0.3s ease;
+}
+
+.logo:hover {
+    color: #e0e0e0;
+    background-color: rgb(43, 74, 87);
 }
 
 .navbar .nav-link {
