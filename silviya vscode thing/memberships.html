@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loco Gym | Memberships</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar fixed-top nav-color navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand logo" href="index.html">Loco Gym</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="memberships.html">Memberships</a></li>
+                    <li class="nav-item"><a class="nav-link" href="locations.html">Locations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="store.html">Store</a></li>
+                    <li class="nav-item"><a class="nav-link" href="trainers.html">Trainers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-2">
+                        <div class="notification-bell" id="notifBell">
+                            <i class="bi bi-bell-fill"></i>
+                            <span class="badge bg-danger rounded-pill">3</span>
+                        </div>
+                        <div class="notification-dropdown" id="notifDropdown">
+                            <div class="notif-title">Notifications</div>
+                            <div class="notif-item"><span class="notif-icon">💳</span> Payment reminder: Your membership renews on May 1st.</div>
+                            <div class="notif-item"><span class="notif-icon">🔥</span> Summer promo: 20% off all annual plans!</div>
+                            <div class="notif-item"><span class="notif-icon">💪</span> Stay motivated! You're on a 5-day streak.</div>
+                        </div>
+                    </li>
+                    <li class="nav-item ms-2 position-relative">
+                        <a class="nav-link" href="store.html"><i class="bi bi-cart3" style="font-size: 20px;"></i><span class="badge bg-danger cart-badge" id="cartCount" style="display:none;">0</span></a>
+                    </li>
+                    <li class="nav-item ms-2"><a class="btn btn-login" href="login.html">Login / Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="section-light text-center">
+        <div class="container">
+            <h1 class="section-title">Membership Plans</h1>
+            <p class="section-subtitle">Flexible plans to match your fitness goals and budget</p>
+        </div>
+    </section>
+
+    <hr class="gradient-divider">
+
+    <!-- Pricing Cards -->
+    <section class="section-white">
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+
+                <!-- Basic -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card membership-card">
+                        <div class="card-header">
+                            <h3>Basic</h3>
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="price">$19.99 <span>/month</span></div>
+                            <p class="text-muted mt-2">Great for getting started</p>
+                            <ul class="mt-3 text-start">
+                                <li>Access to gym floor</li>
+                                <li>Cardio equipment</li>
+                                <li>Locker room access</li>
+                                <li>Free Wi-Fi</li>
+                                <li>1 location only</li>
+                            </ul>
+                            <a href="register.html" class="btn btn-membership mt-3 w-100">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Standard (Featured) -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card membership-card featured">
+                        <div class="card-header">
+                            <h3>Standard <span class="badge bg-light text-dark ms-2">Most Popular</span></h3>
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="price">$34.99 <span>/month</span></div>
+                            <p class="text-muted mt-2">Best value for regular gym-goers</p>
+                            <ul class="mt-3 text-start">
+                                <li>All Basic features</li>
+                                <li>Group fitness classes</li>
+                                <li>All locations access</li>
+                                <li>Guest pass (1/month)</li>
+                                <li>10% store discount</li>
+                            </ul>
+                            <a href="register.html" class="btn btn-membership mt-3 w-100">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Premium -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card membership-card">
+                        <div class="card-header">
+                            <h3>Premium</h3>
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="price">$49.99 <span>/month</span></div>
+                            <p class="text-muted mt-2">The ultimate fitness experience</p>
+                            <ul class="mt-3 text-start">
+                                <li>All Standard features</li>
+                                <li>2 personal trainer sessions/month</li>
+                                <li>Custom nutrition plan</li>
+                                <li>Priority class booking</li>
+                                <li>20% store discount</li>
+                                <li>Free towel service</li>
+                            </ul>
+                            <a href="register.html" class="btn btn-membership mt-3 w-100">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="gradient-divider">
+
+    <!-- Comparison Table -->
+    <section class="section-light">
+        <div class="container">
+            <h2 class="section-title text-center">Compare Plans</h2>
+            <p class="section-subtitle text-center">See what each plan includes at a glance</p>
+            <div class="table-responsive">
+                <table class="table table-bordered text-center align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Feature</th>
+                            <th>Basic</th>
+                            <th>Standard</th>
+                            <th>Premium</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-start fw-bold">Gym Floor Access</td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="text-start fw-bold">Cardio Equipment</td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="text-start fw-bold">All Locations</td>
+                            <td><i class="bi bi-x-circle-fill text-danger"></i></td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="text-start fw-bold">Group Classes</td>
+                            <td><i class="bi bi-x-circle-fill text-danger"></i></td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="text-start fw-bold">Personal Trainer</td>
+                            <td><i class="bi bi-x-circle-fill text-danger"></i></td>
+                            <td><i class="bi bi-x-circle-fill text-danger"></i></td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="text-start fw-bold">Nutrition Plan</td>
+                            <td><i class="bi bi-x-circle-fill text-danger"></i></td>
+                            <td><i class="bi bi-x-circle-fill text-danger"></i></td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="text-start fw-bold">Store Discount</td>
+                            <td>—</td>
+                            <td>10%</td>
+                            <td>20%</td>
+                        </tr>
+                        <tr class="table-light fw-bold">
+                            <td class="text-start">Monthly Price</td>
+                            <td>$19.99</td>
+                            <td>$34.99</td>
+                            <td>$49.99</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Loco Gym</h5>
+                    <p>The best gym franchise in Montreal. Fitness for everyone, everywhere.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="memberships.html">Memberships</a></li>
+                        <li><a href="locations.html">Locations</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="trainers.html">Trainers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p><i class="bi bi-geo-alt"></i> 1234 Rue Sainte-Catherine, Montreal, QC</p>
+                    <p><i class="bi bi-telephone"></i> (514) 555-LOCO</p>
+                    <p><i class="bi bi-envelope"></i> info@locogym.ca</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Loco Gym. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
