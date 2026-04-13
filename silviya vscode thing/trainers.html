@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loco Gym | Trainers</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar fixed-top nav-color navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand logo" href="index.html">Loco Gym</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="memberships.html">Memberships</a></li>
+                    <li class="nav-item"><a class="nav-link" href="locations.html">Locations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="store.html">Store</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="trainers.html">Trainers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-2">
+                        <div class="notification-bell" id="notifBell">
+                            <i class="bi bi-bell-fill"></i>
+                            <span class="badge bg-danger rounded-pill">3</span>
+                        </div>
+                        <div class="notification-dropdown" id="notifDropdown">
+                            <div class="notif-title">Notifications</div>
+                            <div class="notif-item"><span class="notif-icon">💳</span> Payment reminder: Your membership renews on May 1st.</div>
+                            <div class="notif-item"><span class="notif-icon">🔥</span> Summer promo: 20% off all annual plans!</div>
+                            <div class="notif-item"><span class="notif-icon">💪</span> Stay motivated! You're on a 5-day streak.</div>
+                        </div>
+                    </li>
+                    <li class="nav-item ms-2 position-relative">
+                        <a class="nav-link" href="store.html"><i class="bi bi-cart3" style="font-size: 20px;"></i><span class="badge bg-danger cart-badge" id="cartCount" style="display:none;">0</span></a>
+                    </li>
+                    <li class="nav-item ms-2"><a class="btn btn-login" href="login.html">Login / Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="section-light text-center">
+        <div class="container">
+            <h1 class="section-title">Our Trainers</h1>
+            <p class="section-subtitle">Certified professionals ready to help you reach your goals</p>
+
+            <!-- Category Filter -->
+            <div class="mb-3">
+                <button class="trainer-category-btn active" data-category="all">All</button>
+                <button class="trainer-category-btn" data-category="strength">Strength</button>
+                <button class="trainer-category-btn" data-category="cardio">Cardio</button>
+                <button class="trainer-category-btn" data-category="bodybuilding">Bodybuilding</button>
+                <button class="trainer-category-btn" data-category="yoga">Yoga</button>
+            </div>
+        </div>
+    </section>
+
+    <hr class="gradient-divider">
+
+    <!-- Trainers Grid -->
+    <section class="section-white">
+        <div class="container">
+            <div class="row g-4">
+
+                <!-- Trainer 1 -->
+                <div class="col-lg-4 col-md-6 trainer-item" data-category="strength">
+                    <div class="card trainer-card">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=300&fit=crop" class="card-img-top" alt="Marc Dupont">
+                        <div class="card-body">
+                            <h5 class="trainer-name">Marc Dupont</h5>
+                            <p class="trainer-specialty">Strength & Powerlifting</p>
+                            <p class="card-text">10+ years of competitive powerlifting. Specializes in squat, bench, and deadlift programming. Helped 50+ clients compete at provincial level.</p>
+                            <p><i class="bi bi-geo-alt"></i> Downtown, Hochelaga</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trainer 2 -->
+                <div class="col-lg-4 col-md-6 trainer-item" data-category="cardio">
+                    <div class="card trainer-card">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&h=300&fit=crop" class="card-img-top" alt="Sophie Tremblay">
+                        <div class="card-body">
+                            <h5 class="trainer-name">Sophie Tremblay</h5>
+                            <p class="trainer-specialty">Cardio & HIIT</p>
+                            <p class="card-text">Certified HIIT specialist with a passion for endurance training. Runs the most popular group cardio classes at Loco Gym.</p>
+                            <p><i class="bi bi-geo-alt"></i> Plateau, Villeray</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trainer 3 -->
+                <div class="col-lg-4 col-md-6 trainer-item" data-category="bodybuilding">
+                    <div class="card trainer-card">
+                        <img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=400&h=300&fit=crop" class="card-img-top" alt="Jean-Philippe Roy">
+                        <div class="card-body">
+                            <h5 class="trainer-name">Jean-Philippe Roy</h5>
+                            <p class="trainer-specialty">Bodybuilding</p>
+                            <p class="card-text">Former competitive bodybuilder and certified nutrition expert. Creates personalized hypertrophy and meal plans for clients.</p>
+                            <p><i class="bi bi-geo-alt"></i> Downtown, Laval</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trainer 4 -->
+                <div class="col-lg-4 col-md-6 trainer-item" data-category="yoga">
+                    <div class="card trainer-card">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=300&fit=crop" class="card-img-top" alt="Camille Beaumont">
+                        <div class="card-body">
+                            <h5 class="trainer-name">Camille Beaumont</h5>
+                            <p class="trainer-specialty">Yoga & Flexibility</p>
+                            <p class="card-text">200-hour certified yoga instructor. Teaches vinyasa and restorative yoga classes. Focuses on mobility and recovery.</p>
+                            <p><i class="bi bi-geo-alt"></i> Plateau, Downtown</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trainer 5 -->
+                <div class="col-lg-4 col-md-6 trainer-item" data-category="strength">
+                    <div class="card trainer-card">
+                        <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400&h=300&fit=crop" class="card-img-top" alt="Alexandre Côté">
+                        <div class="card-body">
+                            <h5 class="trainer-name">Alexandre Côté</h5>
+                            <p class="trainer-specialty">Strength & Conditioning</p>
+                            <p class="card-text">Former college football S&C coach. Specializes in athletic performance, speed training, and functional movement.</p>
+                            <p><i class="bi bi-geo-alt"></i> Laval, Villeray</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trainer 6 -->
+                <div class="col-lg-4 col-md-6 trainer-item" data-category="cardio">
+                    <div class="card trainer-card">
+                        <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=400&h=300&fit=crop" class="card-img-top" alt="Isabelle Gagnon">
+                        <div class="card-body">
+                            <h5 class="trainer-name">Isabelle Gagnon</h5>
+                            <p class="trainer-specialty">Cardio & Dance Fitness</p>
+                            <p class="card-text">Brings energy and fun to every class. Specializes in Zumba, dance cardio, and kickboxing-inspired workouts.</p>
+                            <p><i class="bi bi-geo-alt"></i> Hochelaga, Plateau</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Loco Gym</h5>
+                    <p>The best gym franchise in Montreal. Fitness for everyone, everywhere.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="memberships.html">Memberships</a></li>
+                        <li><a href="locations.html">Locations</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="trainers.html">Trainers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p><i class="bi bi-geo-alt"></i> 1234 Rue Sainte-Catherine, Montreal, QC</p>
+                    <p><i class="bi bi-telephone"></i> (514) 555-LOCO</p>
+                    <p><i class="bi bi-envelope"></i> info@locogym.ca</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Loco Gym. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
