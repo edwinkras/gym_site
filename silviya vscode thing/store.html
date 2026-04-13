@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loco Gym | Store</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar fixed-top nav-color navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand logo" href="index.html">Loco Gym</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="memberships.html">Memberships</a></li>
+                    <li class="nav-item"><a class="nav-link" href="locations.html">Locations</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="store.html">Store</a></li>
+                    <li class="nav-item"><a class="nav-link" href="trainers.html">Trainers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-2">
+                        <div class="notification-bell" id="notifBell">
+                            <i class="bi bi-bell-fill"></i>
+                            <span class="badge bg-danger rounded-pill">3</span>
+                        </div>
+                        <div class="notification-dropdown" id="notifDropdown">
+                            <div class="notif-title">Notifications</div>
+                            <div class="notif-item"><span class="notif-icon">💳</span> Payment reminder: Your membership renews on May 1st.</div>
+                            <div class="notif-item"><span class="notif-icon">🔥</span> Summer promo: 20% off all annual plans!</div>
+                            <div class="notif-item"><span class="notif-icon">💪</span> Stay motivated! You're on a 5-day streak.</div>
+                        </div>
+                    </li>
+                    <li class="nav-item ms-2 position-relative">
+                        <a class="nav-link" href="store.html">
+                            <i class="bi bi-cart3" style="font-size: 20px;"></i>
+                            <span class="badge bg-danger cart-badge" id="cartCount" style="display:none;">0</span>
+                        </a>
+                    </li>
+                    <li class="nav-item ms-2"><a class="btn btn-login" href="login.html">Login / Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="section-light text-center">
+        <div class="container">
+            <h1 class="section-title">Loco Gym Store</h1>
+            <p class="section-subtitle">Rep the brand — grab your Loco Gym gear</p>
+        </div>
+    </section>
+
+    <hr class="gradient-divider">
+
+    <!-- Products Grid -->
+    <section class="section-white">
+        <div class="container">
+            <div class="row g-4">
+
+                <!-- Product 1: T-Shirt -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card product-card">
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=300&fit=crop" class="card-img-top" alt="Loco Gym T-Shirt">
+                        <div class="card-body">
+                            <h5 class="card-title">Loco Gym T-Shirt</h5>
+                            <p class="card-text text-muted">Classic cotton tee with the Loco Gym logo. Available in S, M, L, XL.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">$24.99</span>
+                                <button class="btn btn-cart btn-add-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2: Tank Top -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card product-card">
+                        <img src="https://images.unsplash.com/photo-1503341504253-dff4f94032fc?w=400&h=300&fit=crop" class="card-img-top" alt="Loco Gym Tank Top">
+                        <div class="card-body">
+                            <h5 class="card-title">Loco Gym Tank Top</h5>
+                            <p class="card-text text-muted">Breathable workout tank for intense training sessions.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">$19.99</span>
+                                <button class="btn btn-cart btn-add-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3: Water Bottle -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card product-card">
+                        <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400&h=300&fit=crop" class="card-img-top" alt="Loco Gym Water Bottle">
+                        <div class="card-body">
+                            <h5 class="card-title">Loco Gym Bottle</h5>
+                            <p class="card-text text-muted">750ml insulated stainless steel bottle. Keeps drinks cold for 24h.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">$14.99</span>
+                                <button class="btn btn-cart btn-add-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4: Gym Bag -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card product-card">
+                        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=300&fit=crop" class="card-img-top" alt="Loco Gym Bag">
+                        <div class="card-body">
+                            <h5 class="card-title">Loco Gym Bag</h5>
+                            <p class="card-text text-muted">Durable duffel bag with shoe compartment and side pockets.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">$39.99</span>
+                                <button class="btn btn-cart btn-add-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5: Hoodie -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card product-card">
+                        <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=300&fit=crop" class="card-img-top" alt="Loco Gym Hoodie">
+                        <div class="card-body">
+                            <h5 class="card-title">Loco Gym Hoodie</h5>
+                            <p class="card-text text-muted">Warm fleece hoodie with embroidered Loco Gym logo.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">$44.99</span>
+                                <button class="btn btn-cart btn-add-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6: Shaker -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card product-card">
+                        <img src="https://images.unsplash.com/photo-1594498653517-c4afdfc4303b?w=400&h=300&fit=crop" class="card-img-top" alt="Protein Shaker">
+                        <div class="card-body">
+                            <h5 class="card-title">Protein Shaker</h5>
+                            <p class="card-text text-muted">600ml shaker with mixing ball. Leak-proof design.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">$12.99</span>
+                                <button class="btn btn-cart btn-add-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 7: Wrist Wraps -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card product-card">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=300&fit=crop" class="card-img-top" alt="Wrist Wraps">
+                        <div class="card-body">
+                            <h5 class="card-title">Wrist Wraps</h5>
+                            <p class="card-text text-muted">Heavy-duty wrist wraps for powerlifting and bench press support.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">$16.99</span>
+                                <button class="btn btn-cart btn-add-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 8: Resistance Bands -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card product-card">
+                        <img src="https://images.unsplash.com/photo-1598289431512-b97b0917affc?w=400&h=300&fit=crop" class="card-img-top" alt="Resistance Bands">
+                        <div class="card-body">
+                            <h5 class="card-title">Resistance Bands Set</h5>
+                            <p class="card-text text-muted">5-piece resistance band set for warm-ups and mobility work.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">$22.99</span>
+                                <button class="btn btn-cart btn-add-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Loco Gym</h5>
+                    <p>The best gym franchise in Montreal. Fitness for everyone, everywhere.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="memberships.html">Memberships</a></li>
+                        <li><a href="locations.html">Locations</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="trainers.html">Trainers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p><i class="bi bi-geo-alt"></i> 1234 Rue Sainte-Catherine, Montreal, QC</p>
+                    <p><i class="bi bi-telephone"></i> (514) 555-LOCO</p>
+                    <p><i class="bi bi-envelope"></i> info@locogym.ca</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Loco Gym. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
