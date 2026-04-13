@@ -1,33 +1,656 @@
+/* ===== Loco Gym — Global Styles ===== */
+
+/* ---------- Color Variables ---------- */
+:root {
+    --primary: #3a8a96;
+    --primary-dark: #2a6a74;
+    --gradient-start: rgba(58, 138, 150, 1);
+    --gradient-mid: rgba(44, 85, 95, 1);
+    --gradient-end: rgba(30, 42, 50, 1);
+    --text-dark: #e0e0e0;
+    --text-light: #f0f0f0;
+    --bg-light: #1e1e2a;
+    --bg-dark: #111118;
+    --accent: #e85a2a;
+    --border-color: #3a8a96;
+    --shadow-color: rgba(58, 138, 150, 0.2);
+}
+
+/* ---------- Reset & Base ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 120px;
+    color: var(--text-dark);
+    background-color: #16161f;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ---------- Navbar ---------- */
 .nav-color {
-    background: #92dfe8;
-    background: linear-gradient(180deg, rgba(146, 223, 232, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    background: #1a2a30;
+    background: linear-gradient(180deg, rgba(30, 50, 58, 1) 0%, rgba(22, 22, 31, 1) 100%);
 }
 
 .logo {
     font-family: "New Century Schoolbook", Georgia, serif;
     font-size: 58px;
     font-weight: 400;
-    text-shadow: 1px 3px 10px dimgray;
-    background-color: ghostwhite;
-    box-shadow: -6px 6px 40px lightcyan;
-    border: 3px solid lightblue;
+    color: #e0e0e0;
+    text-shadow: 1px 3px 10px rgba(0,0,0,0.5);
+    background-color: #1e2a30;
+    box-shadow: -6px 6px 40px var(--shadow-color);
+    border: 3px solid var(--border-color);
     padding: 10px;
     border-radius: 20px;
+}
+
+.navbar .nav-link {
+    font-size: 16px;
+    font-weight: 500;
+    color: #b0b0b0;
+    transition: color 0.3s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+.navbar .btn-login {
+    background-color: var(--primary-dark);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.navbar .btn-login:hover {
+    background-color: #4aa3ae;
+}
+
+/* ---------- Notification Bell ---------- */
+.notification-bell {
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.notification-bell .badge {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    font-size: 10px;
+}
+
+.notification-dropdown {
+    position: absolute;
+    right: 0;
+    top: 35px;
+    width: 300px;
+    background: #1e1e2a;
+    border: 1px solid #2a2a3a;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    z-index: 1050;
+    display: none;
+    max-height: 350px;
+    overflow-y: auto;
+    color: #ccc;
+}
+
+.notification-dropdown.show {
+    display: block;
+}
+
+.notification-dropdown .notif-item {
+    padding: 12px 16px;
+    border-bottom: 1px solid #2a2a3a;
+    font-size: 14px;
+}
+
+.notification-dropdown .notif-item:last-child {
+    border-bottom: none;
+}
+
+.notification-dropdown .notif-item .notif-icon {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.notification-dropdown .notif-title {
+    padding: 12px 16px;
+    font-weight: 700;
+    border-bottom: 2px solid var(--primary);
+    color: var(--primary-dark);
+}
+
+/* ---------- Hero Section ---------- */
+.hero-section {
+    padding: 60px 0;
 }
 
 .text-box-main-view {
     font-family: 'Trebuchet MS', sans-serif;
-    color: whitesmoke;
-    -webkit-text-stroke: 0.79px dimgray;
-    text-shadow: -6px 3px 5px dimgray;
-    box-shadow: -6px 6px 40px lightcyan;
-    border: 3px solid lightblue;
+    color: #e0e0e0;
+    -webkit-text-stroke: 0.79px rgba(0,0,0,0.4);
+    text-shadow: -4px 3px 8px rgba(0,0,0,0.6);
+    box-shadow: -6px 6px 40px var(--shadow-color);
+    border: 3px solid var(--border-color);
     padding: 10px;
     border-radius: 20px;
-    background: #99f1ff;
-    background: linear-gradient(147deg, rgba(153, 241, 255, 1) 0%, rgba(137, 184, 190, 1) 37%, rgba(122, 122, 122, 1) 95%);
+    background: #1e3a40;
+    background: linear-gradient(147deg, rgba(40, 80, 90, 1) 0%, rgba(30, 55, 65, 1) 37%, rgba(20, 30, 38, 1) 95%);
 }
 
-body {
-    padding-top: 120px;
+.text-box-main-view .btn {
+    -webkit-text-stroke: 0;
+    text-shadow: none;
+    font-weight: 600;
+}
+
+/* ---------- Section Styles ---------- */
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: #888;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.section-light {
+    background-color: var(--bg-light);
+    padding: 60px 0;
+}
+
+.section-dark {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    padding: 60px 0;
+}
+
+.section-white {
+    background-color: #1a1a25;
+    padding: 60px 0;
+}
+
+/* ---------- Feature Cards ---------- */
+.feature-card {
+    border: 1px solid #2a2a3a;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+    background-color: #1e1e2a;
+    color: #ccc;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+.feature-card .card-body {
+    padding: 30px;
+}
+
+.feature-card .card-title {
+    color: #e0e0e0;
+}
+
+.feature-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+/* ---------- Membership Cards ---------- */
+.membership-card {
+    border: 2px solid #2a2a3a;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+    background-color: #1e1e2a;
+    color: #ccc;
+}
+
+.membership-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+.membership-card .card-header {
+    background: linear-gradient(135deg, #2a5a64 0%, #1e3a42 100%);
+    color: #e0e0e0;
+    text-align: center;
+    padding: 25px;
+    border: none;
+}
+
+.membership-card .card-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.membership-card .price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.membership-card .price span {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #777;
+}
+
+.membership-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.membership-card ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #2a2a3a;
+}
+
+.membership-card ul li::before {
+    content: "\2713";
+    color: var(--primary-dark);
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+.membership-card.featured {
+    border-color: #3a8a96;
+    transform: scale(1.05);
+}
+
+.membership-card.featured:hover {
+    transform: scale(1.08);
+}
+
+.btn-membership {
+    background-color: var(--primary-dark);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn-membership:hover {
+    background-color: #4aa3ae;
+    color: #fff;
+}
+
+/* ---------- Location Cards ---------- */
+.location-card {
+    border: 1px solid #2a2a3a;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    overflow: hidden;
+    height: 100%;
+    background-color: #1e1e2a;
+    color: #ccc;
+}
+
+.location-card .card-body {
+    padding: 25px;
+}
+
+.location-card .location-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #e0e0e0;
+}
+
+.location-card .location-address {
+    color: #999;
+    font-size: 0.95rem;
+}
+
+/* ---------- Busy Meter ---------- */
+.busy-meter {
+    margin-top: 15px;
+}
+
+.busy-meter .label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.busy-meter .progress {
+    height: 12px;
+    border-radius: 6px;
+}
+
+.busy-low {
+    background-color: #28a745;
+}
+
+.busy-medium {
+    background-color: #ffc107;
+}
+
+.busy-high {
+    background-color: #dc3545;
+}
+
+/* ---------- Store / Product Cards ---------- */
+.product-card {
+    border: 1px solid #2a2a3a;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+    background-color: #1e1e2a;
+    color: #ccc;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+.product-card .card-img-top {
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+.product-card .card-body {
+    padding: 20px;
+}
+
+.product-card .product-price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.btn-cart {
+    background-color: var(--primary-dark);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.btn-cart:hover {
+    background-color: #4aa3ae;
+    color: #fff;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    font-size: 10px;
+}
+
+/* ---------- Trainer Cards ---------- */
+.trainer-card {
+    border: 1px solid #2a2a3a;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
+    height: 100%;
+    text-align: center;
+    background-color: #1e1e2a;
+    color: #ccc;
+}
+
+.trainer-card:hover {
+    transform: translateY(-5px);
+}
+
+.trainer-card .card-img-top {
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+.trainer-card .card-body {
+    padding: 25px;
+}
+
+.trainer-card .trainer-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #e0e0e0;
+}
+
+.trainer-card .trainer-specialty {
+    color: var(--primary-dark);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.trainer-category-btn {
+    border: 2px solid var(--primary-dark);
+    color: var(--primary-dark);
+    border-radius: 20px;
+    padding: 6px 18px;
+    background: transparent;
+    font-weight: 500;
+    transition: all 0.3s;
+    margin: 4px;
+}
+
+.trainer-category-btn:hover,
+.trainer-category-btn.active {
+    background-color: var(--primary-dark);
+    color: #fff;
+}
+
+/* ---------- Auth Forms ---------- */
+.auth-container {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #1e1e2a;
+    border: 1px solid #2a2a3a;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.auth-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #e0e0e0;
+}
+
+.auth-container .form-label {
+    color: #b0b0b0;
+}
+
+.auth-container .form-control {
+    border-radius: 10px;
+    padding: 12px 16px;
+    border: 1px solid #333;
+    background-color: #252535;
+    color: #e0e0e0;
+}
+
+.auth-container .form-control:focus {
+    border-color: var(--primary-dark);
+    box-shadow: 0 0 0 0.2rem rgba(91, 184, 196, 0.25);
+}
+
+.auth-container .btn-primary {
+    background-color: var(--primary-dark);
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-weight: 600;
+    width: 100%;
+}
+
+.auth-container .btn-primary:hover {
+    background-color: #4aa3ae;
+}
+
+.auth-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.auth-link a {
+    color: var(--primary-dark);
+    font-weight: 500;
+}
+
+/* ---------- Contact Form ---------- */
+.contact-section {
+    padding: 60px 0;
+}
+
+.contact-form .form-control,
+.contact-form .form-select {
+    border-radius: 10px;
+    padding: 12px 16px;
+    border: 1px solid #333;
+    background-color: #252535;
+    color: #e0e0e0;
+}
+
+.contact-form .form-label {
+    color: #b0b0b0;
+}
+
+.contact-form .form-control:focus {
+    border-color: var(--primary-dark);
+    box-shadow: 0 0 0 0.2rem rgba(91, 184, 196, 0.25);
+}
+
+.contact-info-card {
+    background: linear-gradient(135deg, #1e3a42 0%, #152a32 100%);
+    color: #ccc;
+    border: 1px solid #2a3a40;
+    border-radius: 15px;
+    padding: 40px;
+    height: 100%;
+}
+
+.contact-info-card h4 {
+    margin-bottom: 25px;
+}
+
+.contact-info-card .info-item {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.contact-info-card .info-icon {
+    font-size: 20px;
+    margin-right: 15px;
+    min-width: 25px;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+    background-color: var(--bg-dark);
+    color: #ccc;
+    padding: 50px 0 20px;
+}
+
+.footer h5 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer a {
+    color: #aaa;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: var(--primary);
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 8px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* ---------- Utility ---------- */
+.gradient-divider {
+    height: 4px;
+    background: linear-gradient(90deg, #3a8a96 0%, #1e3a42 100%);
+    border: none;
+    border-radius: 2px;
+    margin: 0;
+}
+
+/* ---------- Dark Theme Form Overrides ---------- */
+.form-select {
+    background-color: #252535;
+    color: #e0e0e0;
+    border-color: #333;
+}
+
+.form-check-label {
+    color: #b0b0b0;
+}
+
+.table {
+    color: #ccc;
+}
+
+.table-bordered {
+    border-color: #2a2a3a;
+}
+
+.table-bordered td,
+.table-bordered th {
+    border-color: #2a2a3a;
+}
+
+.table-light {
+    background-color: #252535 !important;
+    color: #e0e0e0 !important;
+}
+
+.text-muted {
+    color: #888 !important;
 }
