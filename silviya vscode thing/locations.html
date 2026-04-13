@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loco Gym | Locations</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar fixed-top nav-color navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand logo" href="index.html">Loco Gym</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="memberships.html">Memberships</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="locations.html">Locations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="store.html">Store</a></li>
+                    <li class="nav-item"><a class="nav-link" href="trainers.html">Trainers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-2">
+                        <div class="notification-bell" id="notifBell">
+                            <i class="bi bi-bell-fill"></i>
+                            <span class="badge bg-danger rounded-pill">3</span>
+                        </div>
+                        <div class="notification-dropdown" id="notifDropdown">
+                            <div class="notif-title">Notifications</div>
+                            <div class="notif-item"><span class="notif-icon">💳</span> Payment reminder: Your membership renews on May 1st.</div>
+                            <div class="notif-item"><span class="notif-icon">🔥</span> Summer promo: 20% off all annual plans!</div>
+                            <div class="notif-item"><span class="notif-icon">💪</span> Stay motivated! You're on a 5-day streak.</div>
+                        </div>
+                    </li>
+                    <li class="nav-item ms-2 position-relative">
+                        <a class="nav-link" href="store.html"><i class="bi bi-cart3" style="font-size: 20px;"></i><span class="badge bg-danger cart-badge" id="cartCount" style="display:none;">0</span></a>
+                    </li>
+                    <li class="nav-item ms-2"><a class="btn btn-login" href="login.html">Login / Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="section-light text-center">
+        <div class="container">
+            <h1 class="section-title">Our Locations</h1>
+            <p class="section-subtitle">Find the Loco Gym nearest to you across Montreal</p>
+
+            <!-- Location Filter -->
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-4">
+                    <select class="form-select" id="locationFilter">
+                        <option value="all">All Neighborhoods</option>
+                        <option value="downtown">Downtown</option>
+                        <option value="plateau">Plateau Mont-Royal</option>
+                        <option value="hochelaga">Hochelaga-Maisonneuve</option>
+                        <option value="laval">Laval</option>
+                        <option value="villeray">Villeray</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="gradient-divider">
+
+    <!-- Locations Grid -->
+    <section class="section-white">
+        <div class="container">
+            <div class="row g-4">
+
+                <!-- Downtown -->
+                <div class="col-lg-4 col-md-6 location-item" data-area="downtown">
+                    <div class="card location-card">
+                        <div class="card-body">
+                            <h5 class="location-name"><i class="bi bi-geo-alt-fill text-primary"></i> Loco Gym Downtown</h5>
+                            <p class="location-address">1234 Rue Sainte-Catherine O, Montreal, QC H3G 1P1</p>
+                            <p><i class="bi bi-clock"></i> Mon-Fri: 5AM - 11PM | Sat-Sun: 7AM - 9PM</p>
+                            <p><i class="bi bi-telephone"></i> (514) 555-0101</p>
+                            <div class="busy-meter">
+                                <div class="label">Current Capacity: <strong>35%</strong> — Not Busy</div>
+                                <div class="progress">
+                                    <div class="progress-bar busy-meter-bar" data-busy="35"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plateau -->
+                <div class="col-lg-4 col-md-6 location-item" data-area="plateau">
+                    <div class="card location-card">
+                        <div class="card-body">
+                            <h5 class="location-name"><i class="bi bi-geo-alt-fill text-primary"></i> Loco Gym Plateau</h5>
+                            <p class="location-address">789 Avenue du Mont-Royal E, Montreal, QC H2J 1W8</p>
+                            <p><i class="bi bi-clock"></i> Mon-Fri: 6AM - 10PM | Sat-Sun: 8AM - 8PM</p>
+                            <p><i class="bi bi-telephone"></i> (514) 555-0202</p>
+                            <div class="busy-meter">
+                                <div class="label">Current Capacity: <strong>72%</strong> — Busy</div>
+                                <div class="progress">
+                                    <div class="progress-bar busy-meter-bar" data-busy="72"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hochelaga -->
+                <div class="col-lg-4 col-md-6 location-item" data-area="hochelaga">
+                    <div class="card location-card">
+                        <div class="card-body">
+                            <h5 class="location-name"><i class="bi bi-geo-alt-fill text-primary"></i> Loco Gym Hochelaga</h5>
+                            <p class="location-address">3456 Rue Ontario E, Montreal, QC H1W 1R5</p>
+                            <p><i class="bi bi-clock"></i> Mon-Fri: 5AM - 11PM | Sat-Sun: 7AM - 9PM</p>
+                            <p><i class="bi bi-telephone"></i> (514) 555-0303</p>
+                            <div class="busy-meter">
+                                <div class="label">Current Capacity: <strong>50%</strong> — Moderate</div>
+                                <div class="progress">
+                                    <div class="progress-bar busy-meter-bar" data-busy="50"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Laval -->
+                <div class="col-lg-4 col-md-6 location-item" data-area="laval">
+                    <div class="card location-card">
+                        <div class="card-body">
+                            <h5 class="location-name"><i class="bi bi-geo-alt-fill text-primary"></i> Loco Gym Laval</h5>
+                            <p class="location-address">2100 Boulevard Le Carrefour, Laval, QC H7S 1Z6</p>
+                            <p><i class="bi bi-clock"></i> Mon-Fri: 5AM - 10PM | Sat-Sun: 7AM - 8PM</p>
+                            <p><i class="bi bi-telephone"></i> (450) 555-0404</p>
+                            <div class="busy-meter">
+                                <div class="label">Current Capacity: <strong>20%</strong> — Not Busy</div>
+                                <div class="progress">
+                                    <div class="progress-bar busy-meter-bar" data-busy="20"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Villeray -->
+                <div class="col-lg-4 col-md-6 location-item" data-area="villeray">
+                    <div class="card location-card">
+                        <div class="card-body">
+                            <h5 class="location-name"><i class="bi bi-geo-alt-fill text-primary"></i> Loco Gym Villeray</h5>
+                            <p class="location-address">560 Rue de Castelnau E, Montreal, QC H2R 1R3</p>
+                            <p><i class="bi bi-clock"></i> Mon-Fri: 6AM - 10PM | Sat-Sun: 8AM - 8PM</p>
+                            <p><i class="bi bi-telephone"></i> (514) 555-0505</p>
+                            <div class="busy-meter">
+                                <div class="label">Current Capacity: <strong>85%</strong> — Very Busy</div>
+                                <div class="progress">
+                                    <div class="progress-bar busy-meter-bar" data-busy="85"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Loco Gym</h5>
+                    <p>The best gym franchise in Montreal. Fitness for everyone, everywhere.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="memberships.html">Memberships</a></li>
+                        <li><a href="locations.html">Locations</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="trainers.html">Trainers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p><i class="bi bi-geo-alt"></i> 1234 Rue Sainte-Catherine, Montreal, QC</p>
+                    <p><i class="bi bi-telephone"></i> (514) 555-LOCO</p>
+                    <p><i class="bi bi-envelope"></i> info@locogym.ca</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Loco Gym. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
