@@ -101,6 +101,4 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ---------- File Reading (Database) ----------
-    
 });
