@@ -115,6 +115,18 @@ document.addEventListener('DOMContentLoaded', function () {
     var checkoutBtn = document.getElementById('checkoutBtn');
     if (checkoutBtn) {
         checkoutBtn.addEventListener('click', function () {
+            document.getElementById('checkoutForm').classList.remove('was-validated');
+
+            let holderInput = document.getElementById("cardholder-input");
+            let cardInput = document.getElementById("cardnumber-input");
+            let expiryInput = document.getElementById("expiry-input");
+            let cvvInput = document.getElementById("cvv-input");
+
+            holderInput.value = "";
+            cardInput.value = "";
+            expiryInput.value = "";
+            cvvInput.value = "";
+            
             var cart = getCart();
             if (cart.length === 0) return;
             var total = cart.reduce(function (sum, item) { return sum + (item.price * item.quantity); }, 0);
@@ -130,6 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!checkoutForm.checkValidity()) return;
 
             localStorage.removeItem(LS_CART);
+
             updateBadge();
 
             var checkoutModal = bootstrap.Modal.getInstance(document.getElementById('checkoutModal'));
