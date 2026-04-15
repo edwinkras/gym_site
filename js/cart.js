@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
             let expiryInput = document.getElementById("expiry-input");
             let cvvInput = document.getElementById("cvv-input");
 
-            holderInput.value = "";
+            holderInput.value = ""; // resetting all the values
             cardInput.value = "";
             expiryInput.value = "";
             cvvInput.value = "";
