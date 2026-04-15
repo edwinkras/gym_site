@@ -1,10 +1,7 @@
-// ===== Loco Gym — Cart System =====
-
 document.addEventListener('DOMContentLoaded', function () {
 
-    // ---------- Load cart from localStorage ----------
     function getCart() {
-        return safeJSONParse(localStorage.getItem(LS_CART), []);
+        return JSON.parse(localStorage.getItem(LS_CART)) || [];
     }
 
     function saveCart(cart) {
@@ -24,10 +21,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Update badge on every page load
     updateBadge();
 
-    // ---------- Add to Cart (store.html) ----------
     document.querySelectorAll('.btn-add-cart').forEach(function (btn) {
         btn.addEventListener('click', function () {
             var productId = parseInt(btn.getAttribute('data-product-id'));
@@ -44,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function () {
             saveCart(cart);
             updateBadge();
 
-            // Button feedback
             btn.textContent = 'Added!';
             btn.classList.remove('btn-cart');
             btn.classList.add('btn-success');
@@ -56,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // ---------- Cart Offcanvas ----------
     var cartToggle = document.getElementById('cartToggle');
     if (cartToggle) {
         cartToggle.addEventListener('click', function (e) {
@@ -84,9 +77,9 @@ document.addEventListener('DOMContentLoaded', function () {
             total += subtotal;
             html +=
                 '<div class="cart-item d-flex align-items-center mb-3 pb-3 border-bottom border-secondary">' +
-                    '<img src="' + escapeHTML(item.image) + '" alt="' + escapeHTML(item.name) + '" class="rounded me-3" style="width:60px;height:60px;object-fit:cover;">' +
+                    '<img src="' + item.image + '" alt="' + item.name + '" class="rounded me-3" style="width:60px;height:60px;object-fit:cover;">' +
                     '<div class="flex-grow-1">' +
-                        '<h6 class="mb-0">' + escapeHTML(item.name) + '</h6>' +
+                        '<h6 class="mb-0">' + item.name + '</h6>' +
                         '<small class="text-muted">$' + item.price.toFixed(2) + ' x ' + item.quantity + '</small>' +
                     '</div>' +
                     '<div class="d-flex align-items-center gap-2">' +
@@ -100,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function () {
         body.innerHTML = html;
         if (totalEl) totalEl.textContent = '$' + total.toFixed(2);
 
-        // Quantity button handlers
         body.querySelectorAll('.cart-qty-btn').forEach(function (btn) {
             btn.addEventListener('click', function () {
                 var id = parseInt(btn.getAttribute('data-id'));
@@ -120,13 +112,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ---------- Checkout ----------
     var checkoutBtn = document.getElementById('checkoutBtn');
     if (checkoutBtn) {
         checkoutBtn.addEventListener('click', function () {
             var cart = getCart();
             if (cart.length === 0) return;
-
             var total = cart.reduce(function (sum, item) { return sum + (item.price * item.quantity); }, 0);
             document.getElementById('checkoutTotal').textContent = '$' + total.toFixed(2);
         });
@@ -136,60 +126,17 @@ document.addEventListener('DOMContentLoaded', function () {
     if (confirmOrderBtn) {
         confirmOrderBtn.addEventListener('click', function () {
             var checkoutForm = document.getElementById('checkoutForm');
-
-            // Validate card number (Luhn algorithm)
-            var cardInput = checkoutForm.querySelector('[placeholder*="1234"]');
-            if (cardInput) {
-                var digits = cardInput.value.replace(/\s/g, '');
-                var isValidCard = /^\d{13,19}$/.test(digits) && (function (num) {
-                    var sum = 0, alt = false;
-                    for (var i = num.length - 1; i >= 0; i--) {
-                        var n = parseInt(num[i], 10);
-                        if (alt) { n *= 2; if (n > 9) n -= 9; }
-                        sum += n;
-                        alt = !alt;
-                    }
-                    return sum % 10 === 0;
-                })(digits);
-                cardInput.setCustomValidity(isValidCard ? '' : 'Please enter a valid card number');
-            }
-
-            // Validate expiry (MM/YY format, not expired)
-            var expiryInput = checkoutForm.querySelector('[placeholder="MM/YY"]');
-            if (expiryInput) {
-                var expiryVal = expiryInput.value.trim();
-                var expiryMatch = expiryVal.match(/^(0[1-9]|1[0-2])\/(\d{2})$/);
-                if (expiryMatch) {
-                    var expMonth = parseInt(expiryMatch[1], 10);
-                    var expYear = 2000 + parseInt(expiryMatch[2], 10);
-                    var now = new Date();
-                    var isExpired = expYear < now.getFullYear() || (expYear === now.getFullYear() && expMonth < now.getMonth() + 1);
-                    expiryInput.setCustomValidity(isExpired ? 'Card has expired' : '');
-                } else {
-                    expiryInput.setCustomValidity('Use MM/YY format');
-                }
-            }
-
-            // Validate CVV (3-4 digits)
-            var cvvInput = checkoutForm.querySelector('[placeholder="123"]');
-            if (cvvInput) {
-                cvvInput.setCustomValidity(/^\d{3,4}$/.test(cvvInput.value.trim()) ? '' : 'Enter a valid CVV');
-            }
-
             checkoutForm.classList.add('was-validated');
             if (!checkoutForm.checkValidity()) return;
 
-            // Clear cart
             localStorage.removeItem(LS_CART);
             updateBadge();
 
-            // Close modals
             var checkoutModal = bootstrap.Modal.getInstance(document.getElementById('checkoutModal'));
             if (checkoutModal) checkoutModal.hide();
             var cartOffcanvas = bootstrap.Offcanvas.getInstance(document.getElementById('cartOffcanvas'));
             if (cartOffcanvas) cartOffcanvas.hide();
 
-            // Show success toast
             showToast('Order confirmed! Thank you for shopping with Loco Gym.', 'success');
         });
     }

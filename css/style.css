@@ -1,6 +1,3 @@
-/* ===== Loco Gym — Global Styles ===== */
-
-/* ---------- Color Variables ---------- */
 :root {
     --primary: #3a8a96;
     --primary-dark: #2a6a74;
@@ -16,7 +13,6 @@
     --shadow-color: rgba(58, 138, 150, 0.2);
 }
 
-/* ---------- Reset & Base ---------- */
 * {
     margin: 0;
     padding: 0;
@@ -39,7 +35,6 @@ img {
     height: auto;
 }
 
-/* ---------- Navbar ---------- */
 .nav-color {
     background: #1a2a30;
     background: linear-gradient(180deg, rgba(30, 50, 58, 1) 0%, rgba(22, 22, 31, 1) 100%);
@@ -90,7 +85,16 @@ img {
     background-color: #4aa3ae;
 }
 
-/* ---------- Notification Bell ---------- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
 .notification-bell {
     position: relative;
     cursor: pointer;
@@ -118,6 +122,11 @@ img {
     max-height: 350px;
     overflow-y: auto;
     color: #ccc;
+    animation: fadeIn 0.2s ease-in forwards;
+}
+
+.notification-dropdown-fadeout {
+    animation: fadeOut 0.2s forwards;
 }
 
 .notification-dropdown.show {
@@ -146,7 +155,6 @@ img {
     color: var(--primary-dark);
 }
 
-/* ---------- Hero Section ---------- */
 .hero-section {
     padding: 60px 0;
 }
@@ -154,7 +162,6 @@ img {
 .text-box-main-view {
     font-family: 'Trebuchet MS', sans-serif;
     color: #e0e0e0;
-    -webkit-text-stroke: 0.79px rgba(0,0,0,0.4);
     text-shadow: -4px 3px 8px rgba(0,0,0,0.6);
     box-shadow: -6px 6px 40px var(--shadow-color);
     border: 3px solid var(--border-color);
@@ -165,12 +172,10 @@ img {
 }
 
 .text-box-main-view .btn {
-    -webkit-text-stroke: 0;
     text-shadow: none;
     font-weight: 600;
 }
 
-/* ---------- Section Styles ---------- */
 .section-title {
     font-size: 2rem;
     font-weight: 700;
@@ -200,7 +205,6 @@ img {
     padding: 60px 0;
 }
 
-/* ---------- Feature Cards ---------- */
 .feature-card {
     border: 1px solid #2a2a3a;
     border-radius: 15px;
@@ -229,7 +233,6 @@ img {
     margin-bottom: 15px;
 }
 
-/* ---------- Membership Cards ---------- */
 .membership-card {
     border: 2px solid #2a2a3a;
     border-radius: 15px;
@@ -311,7 +314,6 @@ img {
     color: #fff;
 }
 
-/* ---------- Location Cards ---------- */
 .location-card {
     border: 1px solid #2a2a3a;
     border-radius: 15px;
@@ -337,7 +339,6 @@ img {
     font-size: 0.95rem;
 }
 
-/* ---------- Busy Meter ---------- */
 .busy-meter {
     margin-top: 15px;
 }
@@ -365,7 +366,6 @@ img {
     background-color: #dc3545;
 }
 
-/* ---------- Store / Product Cards ---------- */
 .product-card {
     border: 1px solid #2a2a3a;
     border-radius: 15px;
@@ -419,7 +419,6 @@ img {
     font-size: 10px;
 }
 
-/* ---------- Trainer Cards ---------- */
 .trainer-card {
     border: 1px solid #2a2a3a;
     border-radius: 15px;
@@ -474,7 +473,6 @@ img {
     color: #fff;
 }
 
-/* ---------- Auth Forms ---------- */
 .auth-container {
     max-width: 450px;
     margin: 0 auto;
@@ -531,7 +529,6 @@ img {
     font-weight: 500;
 }
 
-/* ---------- Contact Form ---------- */
 .contact-section {
     padding: 60px 0;
 }
@@ -579,7 +576,6 @@ img {
     min-width: 25px;
 }
 
-/* ---------- Footer ---------- */
 .footer {
     background-color: var(--bg-dark);
     color: #ccc;
@@ -618,7 +614,6 @@ img {
     font-size: 0.9rem;
 }
 
-/* ---------- Utility ---------- */
 .gradient-divider {
     height: 4px;
     background: linear-gradient(90deg, #3a8a96 0%, #1e3a42 100%);
@@ -627,7 +622,6 @@ img {
     margin: 0;
 }
 
-/* ---------- Dark Theme Form Overrides ---------- */
 .form-select {
     background-color: #252535;
     color: #e0e0e0;
@@ -660,7 +654,6 @@ img {
     color: #888 !important;
 }
 
-/* ===== Search Bar & Results ===== */
 .search-input {
     background: #252535;
     color: #e0e0e0;
@@ -727,7 +720,6 @@ img {
     font-size: 14px;
 }
 
-/* ===== Cart Offcanvas ===== */
 .offcanvas {
     background: #1a1a25 !important;
     color: #e0e0e0;
@@ -741,7 +733,6 @@ img {
     background: #1e1e2a;
 }
 
-/* ===== Checkout Modal ===== */
 .modal-content {
     background: #1e1e2a;
     color: #e0e0e0;
@@ -756,13 +747,11 @@ img {
     border-top: 1px solid #2a2a3a;
 }
 
-/* ===== Auth Alert ===== */
 .auth-alert {
     font-size: 14px;
     border-radius: 6px;
 }
 
-/* ===== User Dropdown (logged-in state) ===== */
 .dropdown-menu-dark {
     background: #1e1e2a;
     border: 1px solid #2a2a3a;

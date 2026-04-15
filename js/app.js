@@ -1,28 +1,39 @@
-// ===== Loco Gym — Main App Logic =====
-
 document.addEventListener('DOMContentLoaded', function () {
 
-    // ---------- Notification Bell ----------
     var bell = document.getElementById('notifBell');
     var notifDropdown = document.getElementById('notifDropdown');
 
     if (bell && notifDropdown) {
-        // Render notifications dynamically
         var notifBadge = document.getElementById('notifCount');
-        var notifCount = DEFAULT_NOTIFICATIONS.length;
         if (notifBadge) {
-            notifBadge.textContent = notifCount;
-            notifBadge.style.display = notifCount > 0 ? 'inline-block' : 'none';
+            notifBadge.textContent = DEFAULT_NOTIFICATIONS.length;
+            notifBadge.style.display = DEFAULT_NOTIFICATIONS.length > 0 ? 'inline-block' : 'none';
         }
         var html = '<div class="notif-title">Notifications <a href="#" id="markAllRead" class="float-end" style="font-size:12px;">Clear all</a></div>';
         DEFAULT_NOTIFICATIONS.forEach(function (n) {
-            html += '<div class="notif-item"><i class="bi ' + escapeHTML(n.icon) + ' me-2"></i> ' + escapeHTML(n.message) + '</div>';
+            html += '<div class="notif-item"><i class="bi ' + n.icon + ' me-2"></i> ' + n.message + '</div>';
         });
         notifDropdown.innerHTML = html;
 
-        bell.addEventListener('click', function (e) {
-            e.stopPropagation();
-            notifDropdown.classList.toggle('show');
+        bell.addEventListener('click', function (e) { // the bell always goes back to this function when clicked
+            e.stopPropagation(); // no refresh I geuess?
+
+            if (notifDropdown.classList.contains('notification-dropdown-fadeout')) {
+                return; // goes back to beginning of loop
+            }
+
+            if (notifDropdown.classList.contains('show')) { // activates the fadeout
+                notifDropdown.classList.add('notification-dropdown-fadeout')
+
+                setTimeout(() => {
+                    notifDropdown.classList.remove('show');
+                    notifDropdown.classList.remove('notification-dropdown-fadeout');
+                }, 200); // idk what 200 means
+            }
+
+            else {
+                notifDropdown.classList.add('show'); // shows the actual notif shit
+            }
         });
 
         document.addEventListener('click', function (e) {
@@ -31,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        // Mark all as read
         var markAll = document.getElementById('markAllRead');
         if (markAll) {
             markAll.addEventListener('click', function (e) {
@@ -43,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // ---------- Busy Meter (simulated) ----------
     document.querySelectorAll('.busy-meter-bar').forEach(function (bar) {
         var level = parseInt(bar.getAttribute('data-busy'));
         bar.style.width = level + '%';
@@ -56,7 +65,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // ---------- Trainer Category Filter ----------
     document.querySelectorAll('.trainer-category-btn').forEach(function (btn) {
         btn.addEventListener('click', function () {
             document.querySelectorAll('.trainer-category-btn').forEach(function (b) {
@@ -75,7 +83,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // ---------- Location Filter ----------
     var locationFilter = document.getElementById('locationFilter');
     if (locationFilter) {
         locationFilter.addEventListener('change', function () {
@@ -90,9 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ---------- Form Validation (general) ----------
     document.querySelectorAll('.needs-validation').forEach(function (form) {
-        // Skip forms already handled by auth.js
         if (form.querySelector('#regName') || form.querySelector('#loginEmail')) return;
 
         form.addEventListener('submit', function (e) {
@@ -108,8 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // ---------- Contact form pre-fill if logged in ----------
-    var currentUser = safeJSONParse(sessionStorage.getItem(SS_CURRENT));
+    var currentUser = JSON.parse(sessionStorage.getItem(SS_CURRENT));
     if (currentUser) {
         var contactName = document.getElementById('contactName');
         var contactEmail = document.getElementById('contactEmail');
@@ -118,7 +122,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// ---------- Global Toast Helper ----------
 function showToast(message, type) {
     var container = document.getElementById('toastContainer');
     if (!container) {
@@ -134,8 +137,8 @@ function showToast(message, type) {
     toastEl.setAttribute('role', 'alert');
     toastEl.innerHTML =
         '<div class="d-flex">' +
-            '<div class="toast-body">' + escapeHTML(message) + '</div>' +
-            '<button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>' +
+        '<div class="toast-body">' + message + '</div>' +
+        '<button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>' +
         '</div>';
 
     container.appendChild(toastEl);

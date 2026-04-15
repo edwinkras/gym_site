@@ -1,0 +1,72 @@
+Loco Gym — Registered Clients
+==============================
+
+1. Thrall Hellscream
+   Email: thrall@orgrimmar.com
+   Phone: (514) 555-1201
+   Plan: Premium
+   Password: loktar1
+   Joined: 2025-09-15
+
+2. Jaina Proudmoore
+   Email: jaina.proudmoore@dalaran.com
+   Phone: (514) 555-3344
+   Plan: Premium
+   Password: frostbolt3
+   Joined: 2025-10-02
+
+3. Arthas Menethil
+   Email: arthas@lordaeron.com
+   Phone: (438) 555-7788
+   Plan: Basic
+   Password: frostmourne
+   Joined: 2025-10-20
+
+4. Sylvanas Windrunner
+   Email: sylvanas@undercity.com
+   Phone: (514) 555-9012
+   Plan: Premium
+   Password: darkranger9
+   Joined: 2025-11-03
+
+5. Illidan Stormrage
+   Email: illidan@blacktemple.com
+   Phone: (450) 555-2211
+   Plan: Standard
+   Password: notprepared
+   Joined: 2025-11-18
+
+6. Tyrande Whisperwind
+   Email: tyrande@darnassus.com
+   Phone: (514) 555-6543
+   Plan: Standard
+   Password: elune77
+   Joined: 2025-12-01
+
+7. Voljin Darkspear
+   Email: voljin@darkspear.com
+   Phone: (438) 555-4321
+   Plan: Basic
+   Password: loa4life
+   Joined: 2026-01-10
+
+8. Anduin Wrynn
+   Email: anduin@stormwind.com
+   Phone: (514) 555-8765
+   Plan: Standard
+   Password: lightbringer
+   Joined: 2026-01-25
+
+9. Garrosh Hellscream
+   Email: garrosh@orgrimmar.com
+   Phone: (450) 555-1199
+   Plan: Premium
+   Password: ironhorde1
+   Joined: 2026-02-14
+
+10. Malfurion Stormrage
+    Email: malfurion@moonglade.com
+    Phone: (514) 555-5577
+    Plan: Basic
+    Password: druidlife
+    Joined: 2026-03-05
