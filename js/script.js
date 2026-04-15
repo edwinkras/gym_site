@@ -10,12 +10,22 @@ document.addEventListener('DOMContentLoaded', function () {
     if (bell && dropdown) {
         bell.addEventListener('click', function (e) {
             e.stopPropagation();
-            dropdown.classList.toggle('show');
-        });
 
-        document.addEventListener('click', function (e) {
-            if (!dropdown.contains(e.target) && e.target !== bell) {
-                dropdown.classList.remove('show');
+            if (notifDropdown.classList.contains('notification-dropdown-fadeout')) {
+                return;
+            }
+
+            if (notifDropdown.classList.contains('show')) {
+                notifDropdown.classList.add('notification-dropdown-fadeout')
+
+                setTimeout(() => {
+                    notifDropdown.classList.remove('show');
+                    notifDropdown.classList.remove('notification-dropdown-fadeout');
+                }, 200);
+            }
+
+            else {
+                notifDropdown.classList.add('show');
             }
         });
     }

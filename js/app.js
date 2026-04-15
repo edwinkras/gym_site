@@ -15,24 +15,24 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         notifDropdown.innerHTML = html;
 
-        bell.addEventListener('click', function (e) { // the bell always goes back to this function when clicked
-            e.stopPropagation(); // no refresh I geuess?
+        bell.addEventListener('click', function (e) {
+            e.stopPropagation();
 
             if (notifDropdown.classList.contains('notification-dropdown-fadeout')) {
-                return; // goes back to beginning of loop
+                return;
             }
 
-            if (notifDropdown.classList.contains('show')) { // activates the fadeout
+            if (notifDropdown.classList.contains('show')) {
                 notifDropdown.classList.add('notification-dropdown-fadeout')
 
                 setTimeout(() => {
                     notifDropdown.classList.remove('show');
                     notifDropdown.classList.remove('notification-dropdown-fadeout');
-                }, 200); // idk what 200 means
+                }, 200);
             }
 
             else {
-                notifDropdown.classList.add('show'); // shows the actual notif shit
+                notifDropdown.classList.add('show');
             }
         });
 
