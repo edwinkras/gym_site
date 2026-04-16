@@ -1,3 +1,4 @@
+/* Adds universal text coloring and layout for all text and other elements like icons and boxes, for the entire site */
 :root {
     --primary: #3a8a96;
     --primary-dark: #2a6a74;
@@ -19,6 +20,7 @@
     box-sizing: border-box;
 }
 
+/* Adds separation line between different areas when scrolling and make things visible below the nav-bar */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding-top: 120px;
@@ -26,20 +28,24 @@ body {
     background-color: #16161f;
 }
 
-a {
+/* not noticeable */
+/* a {
     text-decoration: none;
-}
+} */
 
-img {
+/* not noticeable */
+/* img {
     max-width: 100%;
     height: auto;
-}
+} */
 
+/* Nav-bar color */
 .nav-color {
     background: #1a2a30;
     background: linear-gradient(180deg, rgba(30, 50, 58, 1) 0%, rgba(22, 22, 31, 1) 100%);
 }
 
+/* Logo styling for the text and the border surrouncing it*/
 .logo {
     font-family: "New Century Schoolbook", Georgia, serif;
     font-size: 58px;
@@ -54,11 +60,13 @@ img {
     transition: background 0.3s ease;
 }
 
+/* Hover animation and color change when the logo is hovered*/
 .logo:hover {
     color: #e0e0e0;
     background-color: rgb(43, 74, 87);
 }
 
+/* Styling for the nav-bar items (nav-links), as color and text style */
 .navbar .nav-link {
     font-size: 16px;
     font-weight: 500;
@@ -66,11 +74,13 @@ img {
     transition: color 0.3s;
 }
 
+/* This takes care of the selected tab's text */
 .navbar .nav-link:hover,
 .navbar .nav-link.active {
     color: var(--primary-dark);
 }
 
+/* Styling of the log in/sign up button */
 .navbar .btn-login {
     background-color: var(--primary-dark);
     color: #fff;
@@ -81,6 +91,7 @@ img {
     transition: background-color 0.3s;
 }
 
+/* Hover animation for the log-in button */
 .navbar .btn-login:hover {
     background-color: #4aa3ae;
 }
@@ -97,12 +108,14 @@ img {
   to { opacity: 0; }
 }
 
+/* Small styling and position thing for the notification bell */
 .notification-bell {
     position: relative;
     cursor: pointer;
     font-size: 20px;
 }
 
+/* Makes the notification amount to the top and make it small */
 .notification-bell .badge {
     position: absolute;
     top: -5px;
@@ -110,6 +123,7 @@ img {
     font-size: 10px;
 }
 
+/* Styling for the notification dropdown menu */
 .notification-dropdown {
     position: absolute;
     right: 0;
@@ -132,25 +146,30 @@ img {
     animation: fadeOut 0.2s forwards;
 }
 
+/* This shows us the notification dropdown appear */
 .notification-dropdown.show {
     display: block;
 }
 
+/* Takes care of each notification info */
 .notification-dropdown .notif-item {
     padding: 12px 16px;
     border-bottom: 1px solid #2a2a3a;
     font-size: 14px;
 }
 
-.notification-dropdown .notif-item:last-child {
+/* not noticeable */
+/* .notification-dropdown .notif-item:last-child {
     border-bottom: none;
-}
+} */
 
-.notification-dropdown .notif-item .notif-icon {
+/* does nothing */
+/* .notification-dropdown .notif-item .notif-icon {
     margin-right: 10px;
     font-size: 18px;
-}
+} */
 
+/* Adds sepration between each notification */
 .notification-dropdown .notif-title {
     padding: 12px 16px;
     font-weight: 700;
@@ -158,10 +177,12 @@ img {
     color: var(--primary-dark);
 }
 
+/* Adds padding between nav and the main view */
 .hero-section {
     padding: 60px 0;
 }
 
+/* Styling for the text box that is in the main page and the first one clients see */
 .text-box-main-view {
     font-family: 'Trebuchet MS', sans-serif;
     color: #e0e0e0;
@@ -174,11 +195,13 @@ img {
     background: linear-gradient(147deg, rgba(40, 80, 90, 1) 0%, rgba(30, 55, 65, 1) 37%, rgba(20, 30, 38, 1) 95%);
 }
 
+/* Styling for the button that is in the text box, which also leads to memberships */
 .text-box-main-view .btn {
     text-shadow: none;
     font-weight: 600;
 }
 
+/* I don't know what this one does personally */
 .section-title {
     font-size: 2rem;
     font-weight: 700;
@@ -208,6 +231,7 @@ img {
     padding: 60px 0;
 }
 
+/* Takes care of the cards below "Why Choose Loco Gym" in home page */
 .feature-card {
     border: 1px solid #2a2a3a;
     border-radius: 15px;
@@ -218,18 +242,21 @@ img {
     color: #ccc;
 }
 
+/* Hover for the cards below "Why choose Loco Gym" */
 .feature-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
 
-.feature-card .card-body {
+/* Doesn't do much */
+/* .feature-card .card-body {
     padding: 30px;
-}
+} */
 
-.feature-card .card-title {
+/* Doesn't do much */
+/* .feature-card .card-title {
     color: #e0e0e0;
-}
+} */
 
 .feature-icon {
     font-size: 40px;
