@@ -1,3 +1,5 @@
+// The search script
+
 document.addEventListener('DOMContentLoaded', function () {
     var searchInput = document.getElementById('searchInput');
     var searchResults = document.getElementById('searchResults');

@@ -1,3 +1,5 @@
+// This is where all the values (words, characters and numbers) are written and taken care of
+
 var LS_USERS = 'locoUsers';
 var LS_CART = 'locoCart';
 var LS_REMEMBERED = 'rememberedUser';

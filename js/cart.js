@@ -1,3 +1,5 @@
+// Takes care of the cart/checkout forms/actions depending on the buttons clicked
+
 document.addEventListener('DOMContentLoaded', function () {
 
     function getCart() {

@@ -1,3 +1,5 @@
+// Takes care of the registration and login of users, which then depending on the outcome, will change the output of the website + add new functions (although very small)
+
 document.addEventListener('DOMContentLoaded', function () {
 
     var currentUser = JSON.parse(sessionStorage.getItem(SS_CURRENT));
