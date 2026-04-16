@@ -9,11 +9,11 @@ var PRODUCTS = [
     { id: 1, name: 'Loco Gym T-Shirt', price: 24.99, category: 'clothing', description: 'Classic cotton tee with the Loco Gym logo. Available in S, M, L, XL.', image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=300&fit=crop' },
     { id: 2, name: 'Loco Gym Tank Top', price: 19.99, category: 'clothing', description: 'Breathable workout tank for intense training sessions.', image: 'https://images.unsplash.com/photo-1659350776365-da58737786cb?w=400&h=300&fit=crop' },
     { id: 3, name: 'Loco Gym Bottle', price: 14.99, category: 'accessories', description: '750ml insulated stainless steel bottle. Keeps drinks cold for 24h.', image: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400&h=300&fit=crop' },
-    { id: 4, name: 'Loco Gym Bag', price: 39.99, category: 'accessories', description: 'Durable duffel bag with shoe compartment and side pockets.', image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=300&fit=crop' },
+    { id: 4, name: 'Loco Gym Bag', price: 39.99, category: 'accessories', description: 'Durable duffel bag with shoe compartment and side pockets.', image: 'https://i5.walmartimages.com/asr/d61d505a-db1a-42fe-8d63-979e73ebefd3.849a6b9170bb9839a360a217873e92e8.jpeg' },
     { id: 5, name: 'Loco Gym Hoodie', price: 44.99, category: 'clothing', description: 'Warm fleece hoodie with embroidered Loco Gym logo.', image: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=300&fit=crop' },
     { id: 6, name: 'Protein Shaker', price: 12.99, category: 'accessories', description: '600ml shaker with mixing ball. Leak-proof design.', image: 'https://images.unsplash.com/photo-1592582228635-ad72046ce827?w=400&h=300&fit=crop' },
-    { id: 7, name: 'Wrist Wraps', price: 16.99, category: 'gear', description: 'Heavy-duty wrist wraps for powerlifting and bench press support.', image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=300&fit=crop' },
-    { id: 8, name: 'Resistance Bands Set', price: 22.99, category: 'gear', description: '5-piece resistance band set for warm-ups and mobility work.', image: 'https://images.unsplash.com/photo-1598289431512-b97b0917affc?w=400&h=300&fit=crop' }
+    { id: 7, name: 'Wrist Wraps', price: 16.99, category: 'gear', description: 'Heavy-duty wrist wraps for powerlifting and bench press support.', image: 'https://mammalstrength.co.uk/cdn/shop/products/mammal-strength-heavy-duty-wrist-wraps-v2-625262.jpg?v=1747058619&width=1500' },
+    { id: 8, name: 'Resistance Bands Set', price: 22.99, category: 'gear', description: '5-piece resistance band set for warm-ups and mobility work.', image: 'https://contents.mediadecathlon.com/p2743201/k$45f245b00da82af0bfedda4b6c39704c/picture.jpg' }
 ];
 
 var TRAINERS = [
